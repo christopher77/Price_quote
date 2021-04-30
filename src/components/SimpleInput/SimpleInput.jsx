@@ -12,6 +12,7 @@ function SimpleInput(props) {
 			setProperty(inputValue);
 		}
 	}
+	
 	function onChangeInput2(event) {
 		setProperty(event.target.value);
 	}

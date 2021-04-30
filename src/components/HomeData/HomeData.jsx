@@ -64,7 +64,7 @@ function HomeData() {
 				/>
 				<label className="terms__label">
 					Acepto la{" "}
-					<a href="#">
+					<a href="####">
 						Politica de Datos Personales y los Términos y Condiciones
 					</a>
 				</label>

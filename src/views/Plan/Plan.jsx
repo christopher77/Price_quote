@@ -85,7 +85,7 @@ const Plan = () => {
 						<div className="details__model">
 							{brand} {yearCar}
 						</div>
-						<a href="#" className="details__link">
+						<a href="####" className="details__link">
 							editar
 						</a>
 					</div>

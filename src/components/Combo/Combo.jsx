@@ -14,8 +14,10 @@ const Combo = (props) => {
 				name={props.name}
 				id={props.name}
 			>
-				{props.array.map((item) => (
-					<option value={item}>{item}</option>
+				{props.array.map((item, index) => (
+					<option key={index} value={item}>
+						{item}
+					</option>
 				))}
 			</select>
 			<img src={chevron} alt="chevron" className="combo__chevron" />
