@@ -14,9 +14,8 @@ import { navigate } from "@reach/router";
 import robo from "../../images/icon_theft.svg";
 import choque from "../../images/icon_damage.png";
 import perdida from "../../images/icon_perdidatotal.svg";
-import chevron from "../../images/chevrot.png";
-import circle_add from "../../images/circle_add.png";
 import { useAddCoverage } from "../../redux/action/action-hooks";
+import Coverage from "../../components/Coverage/Coverage";
 
 const Plan = () => {
 	const licensePlate = useLicensePlate();
@@ -29,6 +28,25 @@ const Plan = () => {
 	const [coverageAmount, setCoverageAmount] = React.useState(20);
 
 	const addCoverage = useAddCoverage();
+
+	const propsRobbery = {
+		title: "Llanta robada",
+		image: robo,
+		handleFunction: handleClickRobbery,
+		labelbutton: buttonRobbery,
+	};
+	const propsCrush = {
+		title: "Choque y/o pasarte la luz roja",
+		image: choque,
+		handleFunction: handleClickCrush,
+		labelbutton: buttonCrush,
+	};
+	const propsAccident = {
+		title: "Atropello en la vía Evitamiento",
+		image: perdida,
+		handleFunction: handleClickAccident,
+		labelbutton: buttonAccident,
+	};
 
 	function handleClickRobbery() {
 		if (buttonRobbery === "agregar") {
@@ -102,40 +120,9 @@ const Plan = () => {
 					<hr />
 				</div>
 				<div className="coverages">
-					<div className="coverages__item">
-						<img src={robo} alt="robo" />
-						<span className="coverages__title">Llanta robada</span>
-						<img className="coverages__image" src={chevron} alt="desplegable" />
-					</div>
-					<div className="coverages__add" onClick={handleClickRobbery}>
-						<img src={circle_add} alt="add coverage" />
-						<button className="coverages__button">{buttonRobbery}</button>
-					</div>
-					<hr />
-					<div className="coverages__item">
-						<img src={choque} alt="choque" />
-						<span className="coverages__title">
-							Choque y/o pasarte la luz roja
-						</span>
-						<img className="coverages__image" src={chevron} alt="desplegable" />
-					</div>
-					<div className="coverages__add" onClick={handleClickCrush}>
-						<img src={circle_add} alt="add coverage" />
-						<button className="coverages__button">{buttonCrush}</button>
-					</div>
-					<hr />
-					<div className="coverages__item">
-						<img src={perdida} alt="perdida" />
-						<span className="coverages__title">
-							Atropello en la vía Evitamiento
-						</span>
-						<img className="coverages__image" src={chevron} alt="desplegable" />
-					</div>
-					<div className="coverages__add" onClick={handleClickAccident}>
-						<img src={circle_add} alt="add coverage" />
-						<button className="coverages__button">{buttonAccident}</button>
-					</div>
-					<hr />
+					<Coverage {...propsRobbery} />
+					<Coverage {...propsCrush} />
+					<Coverage {...propsAccident} />
 				</div>
 			</div>
 

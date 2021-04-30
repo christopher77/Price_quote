@@ -66,6 +66,21 @@ const Auto = () => {
 		setShowModal(false);
 	};
 
+	function increaseAmount() {
+		if (amount === 16500) {
+			return;
+		} else {
+			setAmount(amount + 100);
+		}
+	}
+
+	function decreaseAmount() {
+		if (amount === 12500) {
+			return;
+		} else {
+			setAmount(amount - 100);
+		}
+	}
 	return (
 		<div className="auto__container">
 			<Header />
@@ -112,13 +127,8 @@ const Auto = () => {
 						<span>Min $12,500 Max $16,500</span>
 					</div>
 					<div className="auto__secure--amount">
-						<img
-							src={remove}
-							alt="remove"
-							onClick={() => setAmount(amount - 100)}
-						/>
-						$ {amount}
-						<img src={add} alt="add" onClick={() => setAmount(amount + 100)} />
+						<img src={remove} alt="remove" onClick={decreaseAmount} />$ {amount}
+						<img src={add} alt="add" onClick={increaseAmount} />
 					</div>
 				</div>
 				<button className="auto__button" onClick={goPlan}>

@@ -101,44 +101,6 @@ $blue: #6f7dff;
 	}
 }
 
-.coverages {
-	&__item {
-		width: 100%;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding-top: 2vh;
-	}
-
-	&__title {
-		font-size: 2.5vh;
-	}
-
-	&__image {
-		height: 20%;
-	}
-	&__add {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		height: 2vh;
-		padding-bottom: 2vh;
-		cursor: pointer;
-	}
-	
-	&__button {
-		height: 100%;
-		border-radius: 10px;
-		color: $blue;
-		background-color: $white;
-		border: none;
-		outline: none;
-		cursor: pointer;
-		text-transform: uppercase;
-		margin-left: 0.5vw;
-	}
-}
-
 .right {
 	grid-column: 8/ 10;
 	grid-row: 5/ 9;

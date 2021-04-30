@@ -73,24 +73,37 @@ input[type="number"]::-webkit-inner-spin-button {
 	display: flex;
 	@extend %wrapper;
 
+	&__container {
+		display: flex;
+		align-items: center;
+		width: 25%;
+	}
 	&__select {
 		height: 3.5vh;
-		width: 30%;
+		width: 60%;
 		position: relative;
-		font-size: 17px;
+		font-size: 2vh;
 		background-color: $white;
 		border-style: none;
 		appearance: none;
 		outline: none;
 	}
 
+	&__down {
+		// background-color: blanchedalmond;
+	}
+
+	&__divisor {
+		border-color: black;
+	}
+
 	&__group {
-		width: 70%;
+		width: 75%;
 		@extend %group;
 	}
 
 	&__input {
-		width: 70%;
+		width: 75%;
 		@extend %input;
 
 		&:focus ~ label,
@@ -101,5 +114,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
 	&__label {
 		@extend %label;
+		padding-left: 1vh;
 	}
 }

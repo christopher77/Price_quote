@@ -1,5 +1,6 @@
 import "./SimpleInput.scss";
 import React from "react";
+import down from "../../images/chevrot.png";
 
 function SimpleInput(props) {
 	const setProperty = props.setProperty;
@@ -12,19 +13,26 @@ function SimpleInput(props) {
 			setProperty(inputValue);
 		}
 	}
-	
+
 	function onChangeInput2(event) {
 		setProperty(event.target.value);
 	}
 
 	return props.complex ? (
 		<div className="identification">
-			<select className="identification__select" name="document" id="document">
-				<option value="dni">DNI</option>
-				<option value="passport">PASSPORT</option>
-				<option value="other">OTHER</option>
-			</select>
-			<hr />
+			<div className="identification__container">
+				<select
+					className="identification__select"
+					name="document"
+					id="document"
+				>
+					<option value="dni">DNI</option>
+					<option value="passport">PASSPORT</option>
+					<option value="other">OTHER</option>
+				</select>
+				<img className="identification__down" src={down} alt="down" />
+			</div>
+			<div className="identification__divisor"></div>
 			<div className="identification__group">
 				<input
 					className="identification__input"
