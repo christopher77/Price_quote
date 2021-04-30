@@ -12,7 +12,7 @@ function HomeData() {
 	const [cardID, setCardID] = React.useState("");
 	const [cellphone, setCellphone] = React.useState("");
 	const [placa, setPlaca] = React.useState("");
-	// const [isEnabled, setIsEnabled] = React.useState(false);
+	const [isEnabled, setIsEnabled] = React.useState(false);
 	const addCardID = useAddCardID();
 	const addCellphone = useAddCellphone();
 	const addLicensePlate = useAddLicensePlate();
@@ -39,8 +39,15 @@ function HomeData() {
 		setProperty: setPlaca,
 	};
 
+	React.useEffect(() => {
+		if (cardID.length === 8 && cellphone.length === 9 && placa.length === 6) {
+			setIsEnabled(true);
+		}
+	}, [cardID, cellphone, placa]);
+
 	function handleSubmit(event) {
 		event.preventDefault();
+		console.log(cardID.length);
 		addCardID(cardID);
 		addCellphone(cellphone);
 		addLicensePlate(placa);
@@ -69,11 +76,7 @@ function HomeData() {
 					</a>
 				</label>
 			</div>
-			<button
-				type="submit"
-				className="start__button"
-				//  disabled={!isEnabled}
-			>
+			<button type="submit" className="start__button" disabled={!isEnabled}>
 				cotízalo
 			</button>
 		</form>

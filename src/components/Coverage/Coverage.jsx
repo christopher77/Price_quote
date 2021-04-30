@@ -1,13 +1,9 @@
 import React from "react";
 import chevron from "../../images/chevrot.png";
 import circle_add from "../../images/circle_add.png";
+import "./Coverage.scss";
 
-const Coverage = (props) => {
-	const image = props.image;
-	const handleFunction = props.handleFunction;
-	const labelbutton = props.labelbutton;
-	const title = props.title;
-  
+const Coverage = ({ image, handleFunction, labelbutton, title }) => {
 	return (
 		<div>
 			<div className="coverages__item">

@@ -2,8 +2,7 @@ import "./SimpleInput.scss";
 import React from "react";
 import down from "../../images/chevrot.png";
 
-function SimpleInput(props) {
-	const setProperty = props.setProperty;
+function SimpleInput({ nombre, tipo, max, complex, setProperty }) {
 	const [realValue, setRealValue] = React.useState("");
 
 	function onChangeInput(event) {
@@ -18,7 +17,7 @@ function SimpleInput(props) {
 		setProperty(event.target.value);
 	}
 
-	return props.complex ? (
+	return complex ? (
 		<div className="identification">
 			<div className="identification__container">
 				<select
@@ -36,23 +35,23 @@ function SimpleInput(props) {
 			<div className="identification__group">
 				<input
 					className="identification__input"
-					maxLength={props.max}
+					maxLength={max}
 					type="text"
 					onChange={onChangeInput}
 					autoFocus={true}
 					value={realValue}
 					required
 				></input>
-				<label className="identification__label">{props.nombre}</label>
+				<label className="identification__label">{nombre}</label>
 			</div>
 		</div>
 	) : (
 		<div className="wrapper">
 			<div className="wrapper__group">
-				{props.tipo === "number" ? (
+				{tipo === "number" ? (
 					<input
 						className="wrapper__input"
-						maxLength={props.max}
+						maxLength={max}
 						onChange={onChangeInput}
 						value={realValue}
 						type="text"
@@ -61,13 +60,13 @@ function SimpleInput(props) {
 				) : (
 					<input
 						className="wrapper__input"
-						maxLength={props.max}
+						maxLength={max}
 						onChange={onChangeInput2}
 						type="text"
 						required
 					/>
 				)}
-				<label className="wrapper__label">{props.nombre}</label>
+				<label className="wrapper__label">{nombre}</label>
 			</div>
 		</div>
 	);

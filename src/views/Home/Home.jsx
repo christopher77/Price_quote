@@ -13,9 +13,9 @@ const Home = () => {
 
 	const getData = async () => {
 		try {
-			const res = await fetch("https://jsonplaceholder.typicode.com/users/1");
+			const res = await fetch("https://randomuser.me/api");
 			const data = await res.json();
-			const name = data.username;
+			const name = data.results[0].name.first;
 			addName(name);
 		} catch (error) {
 			console.log(error);
