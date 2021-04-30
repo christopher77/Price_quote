@@ -8,7 +8,7 @@ $blue: #6f7dff;
 	display: grid;
 
 	grid-template-columns: repeat(10, 10vw);
-	grid-template-rows: 7vh 5vh repeat(8, 10vh) 12vh;
+	grid-template-rows: 7vh 5vh repeat(8, 10vh) 19vh;
 }
 
 .plan {
@@ -16,7 +16,7 @@ $blue: #6f7dff;
 	grid-row: 3/ 11;
 
 	display: grid;
-	grid-template-rows: 3vh 10vh 20vh 5vh 6vh 22vh;
+	grid-template-rows: 3vh 10vh 24vh 5vh 6vh 22vh;
 	grid-row-gap: 3vh;
 	width: 90%;
 
@@ -43,12 +43,28 @@ $blue: #6f7dff;
 
 	&__subtitle {
 		font-size: 2.5vh;
+		padding-top: 2vh;
 	}
 	&__options {
-		display: flex;
-		font-size: 1.5vh;
-		// text-align: justify;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+
 		text-transform: uppercase;
+
+		&--item {
+			text-align: center;
+			padding: 0.6rem;
+			width: 75%;
+			cursor: pointer;
+		}
+
+		&--selected {
+			text-align: center;
+			padding: 0.6rem;
+			width: 75%;
+			cursor: pointer;
+			color: $red;
+		}
 	}
 }
 
@@ -96,7 +112,8 @@ $blue: #6f7dff;
 
 		background-image: url(../../images/person.png);
 		background-repeat: no-repeat;
-		background-position: top;
+		background-position: center;
+		background-size: contain;
 		height: 100%;
 	}
 }

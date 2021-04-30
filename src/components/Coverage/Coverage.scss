@@ -16,13 +16,14 @@ $blue: #6f7dff;
 
 	&__image {
 		height: 20%;
+		width: 0.8vw;
 	}
 	&__add {
 		width: 100%;
 		display: flex;
 		justify-content: center;
 		height: 2vh;
-		padding-bottom: 2vh;
+		padding-bottom: 3vh;
 		cursor: pointer;
 	}
 
@@ -37,4 +38,8 @@ $blue: #6f7dff;
 		text-transform: uppercase;
 		margin-left: 0.5vw;
 	}
+}
+
+hr {
+	border: 1px solid #e4e8f7;
 }

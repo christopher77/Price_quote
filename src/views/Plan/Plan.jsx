@@ -27,6 +27,9 @@ const Plan = () => {
 	const [buttonRobbery, setButtonRobbery] = React.useState("agregar");
 	const [coverageAmount, setCoverageAmount] = React.useState(20);
 
+	const [divColor, setDivColor] = React.useState(true);
+	const [divColor1, setDivColor1] = React.useState(false);
+	const [divColor2, setDivColor2] = React.useState(false);
 	const addCoverage = useAddCoverage();
 
 	const propsRobbery = {
@@ -76,6 +79,28 @@ const Plan = () => {
 		}
 	}
 
+	function changeColor() {
+		if (!divColor) {
+			setDivColor(true);
+			setDivColor1(false);
+			setDivColor2(false);
+		}
+	}
+
+	function changeColor1() {
+		if (!divColor1) {
+			setDivColor1(true);
+			setDivColor(false);
+			setDivColor2(false);
+		}
+	}
+	function changeColor2() {
+		if (!divColor2) {
+			setDivColor2(true);
+			setDivColor(false);
+			setDivColor1(false);
+		}
+	}
 	function gotoSuccess() {
 		addCoverage(coverageAmount);
 		navigate("/success");
@@ -114,10 +139,33 @@ const Plan = () => {
 					<div className="plan__subtitle">Agrega o quita coberturas</div>
 				</div>
 				<div className="plan__options">
-					<div className="plan__options--one">protege a tu auto</div>
-					<div className="plan__options--two">protege a los que te rodean</div>
-					<div className="plan__options--three">mejora tu plan</div>
-					<hr />
+					<div
+						className={
+							divColor ? "plan__options--selected" : "plan__options--item"
+						}
+						onClick={changeColor}
+					>
+						protege a tu auto
+					</div>
+
+					<div
+						className={
+							divColor1 ? "plan__options--selected" : "plan__options--item"
+						}
+						onClick={changeColor1}
+					>
+						protege a los que te rodean
+					</div>
+
+					<div
+						className={
+							divColor2 ? "plan__options--selected" : "plan__options--item"
+						}
+						onClick={changeColor2}
+					>
+						mejora tu plan
+					</div>
+					{/* <hr /> */}
 				</div>
 				<div className="coverages">
 					<Coverage {...propsRobbery} />
