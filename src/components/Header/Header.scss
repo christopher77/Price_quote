@@ -1,0 +1,41 @@
+$blue: #6f7dff;
+$white: #f7f8fc;
+
+%header {
+	grid-column: 1/ 12;
+	grid-row: 1/ 2;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	border-color: $white;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	opacity: 90%;
+}
+
+.header {
+	@extend %header;
+	border: 3px solid $white;
+
+	&__info {
+		display: flex;
+		align-items: center;
+		font-size: 1.5vh;
+	}
+
+	&__number {
+		display: flex;
+		color: $blue;
+		margin-left: 2vw;
+
+		&--value {
+			margin-left: 0.2vw;
+		}
+	}
+}
+
+.header__home {
+	@extend %header;
+}

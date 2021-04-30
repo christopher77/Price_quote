@@ -1,0 +1,27 @@
+$white: #fff;
+$gray: #f0f2fa;
+
+.combo {
+	background: $white;
+	padding: 1.2rem;
+	border: 3px solid $gray;
+	border-radius: 10px;
+
+	display: flex;
+	align-items: center;
+
+	&__select {
+		height: 100%;
+		width: 100%;
+		position: relative;
+		font-size: 17px;
+		background-color: $white;
+		border-style: none;
+		appearance: none;
+		outline: none;
+	}
+
+	&__chevron {
+		height: 20%;
+	}
+}

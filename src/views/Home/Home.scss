@@ -1,0 +1,15 @@
+.container {
+	display: grid;
+	grid-template-rows: 7vh repeat(9, 10vh) 3vh;
+	grid-template-columns: 7vw repeat(8, 1fr) 7vw;
+
+	background-position: center;
+	background-position-y: 10vh;
+}
+.home__image {
+	background-image: url(../../images/home.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	grid-column: 1/ 5;
+	grid-row: 1/12;
+}

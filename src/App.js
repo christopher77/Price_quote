@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Router } from "@reach/router";
+import "./App.css";
+import Auto from "./views/Auto/Auto";
+import Home from "./views/Home/Home";
+import Plan from "./views/Plan/Plan";
+import Success from "./views/Success/Success";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Router>
+			<Home path="/" />
+			<Auto path="/auto" />
+			<Plan path="/plan" />
+			<Success path="/success" />
+		</Router>
+	);
 }
 
 export default App;

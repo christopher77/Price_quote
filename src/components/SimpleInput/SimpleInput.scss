@@ -1,0 +1,119 @@
+$small: 10vw;
+$normal: 22vw;
+$large: 30vw;
+$light-grey-1: #d5dbde;
+$light-grey-2: #707070;
+$white: #fff;
+$blue: #2f80ed;
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+%wrapper {
+	background: #fff;
+	padding: 1.2rem;
+	border: 3px solid #f0f2fa;
+	border-radius: 10px;
+}
+
+%group {
+	height: 3.5vh;
+	position: relative;
+}
+
+%input {
+	height: 100%;
+	border-style: none;
+	font-size: 3vh;
+	outline: none;
+}
+
+%input_details {
+	transform: translateY(-20px);
+	font-size: 2vh;
+	padding-bottom: 3px;
+}
+
+%label {
+	position: absolute;
+	left: 0;
+	color: grey;
+	pointer-events: none;
+	transition: all 0.3s ease;
+	font-size: 3vh;
+}
+
+.wrapper {
+	@extend %wrapper;
+
+	&__group {
+		width: 100%;
+		@extend %group;
+	}
+
+	&__input {
+		width: 100%;
+		@extend %input;
+
+		&:focus ~ label,
+		&:valid ~ label {
+			@extend %input_details;
+		}
+	}
+
+	&__label {
+		@extend %label;
+	}
+}
+
+.identification {
+	display: flex;
+	@extend %wrapper;
+
+	&__container {
+		display: flex;
+		align-items: center;
+		width: 25%;
+	}
+	&__select {
+		height: 3.5vh;
+		width: 60%;
+		position: relative;
+		font-size: 2vh;
+		background-color: $white;
+		border-style: none;
+		appearance: none;
+		outline: none;
+	}
+
+	&__down {
+		// background-color: blanchedalmond;
+	}
+
+	&__divisor {
+		border-color: black;
+	}
+
+	&__group {
+		width: 75%;
+		@extend %group;
+	}
+
+	&__input {
+		width: 75%;
+		@extend %input;
+
+		&:focus ~ label,
+		&:valid ~ label {
+			@extend %input_details;
+		}
+	}
+
+	&__label {
+		@extend %label;
+		padding-left: 1vh;
+	}
+}
