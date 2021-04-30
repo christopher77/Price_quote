@@ -6,8 +6,11 @@ function SimpleInput(props) {
 	const [realValue, setRealValue] = React.useState("");
 
 	function onChangeInput(event) {
-		setRealValue(event.target.value.replace(/\D/g, ""));
-		setProperty(realValue);
+		const inputValue = event.target.value;
+		setRealValue(inputValue.replace(/\D/g, ""));
+		if (inputValue.match(/[0-9]{8,9}/)) {
+			setProperty(inputValue);
+		}
 	}
 	function onChangeInput2(event) {
 		setProperty(event.target.value);
