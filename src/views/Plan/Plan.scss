@@ -45,18 +45,18 @@ $blue: #6f7dff;
 		font-size: 2.5vh;
 		padding-top: 2vh;
 	}
+
 	&__options {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 
 		text-transform: uppercase;
-
-		&--item {
-			text-align: center;
-			padding: 0.6rem;
-			width: 75%;
-			cursor: pointer;
-		}
+	}
+	&__item {
+		text-align: center;
+		padding: 0.6rem;
+		width: 75%;
+		cursor: pointer;
 
 		&--selected {
 			text-align: center;

@@ -127,8 +127,19 @@ const Auto = () => {
 						<span>Min $12,500 Max $16,500</span>
 					</div>
 					<div className="auto__secure--amount">
-						<img src={remove} alt="remove" onClick={decreaseAmount} />$ {amount}
-						<img src={add} alt="add" onClick={increaseAmount} />
+						<img
+							className="auto__operators"
+							src={remove}
+							alt="remove"
+							onClick={decreaseAmount}
+						/>
+						$ {amount}
+						<img
+							className="auto__operators"
+							src={add}
+							alt="add"
+							onClick={increaseAmount}
+						/>
 					</div>
 				</div>
 				<button className="auto__button" onClick={goPlan}>
