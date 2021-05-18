@@ -22,85 +22,37 @@ const Plan = () => {
 	const brand = useBrand();
 	const yearCar = useYearCar();
 
-	const [buttonCrush, setButtonCrush] = React.useState("agregar");
-	const [buttonAccident, setButtonAccident] = React.useState("agregar");
-	const [buttonRobbery, setButtonRobbery] = React.useState("agregar");
 	const [coverageAmount, setCoverageAmount] = React.useState(20);
 
-	const [divColor, setDivColor] = React.useState(true);
-	const [divColor1, setDivColor1] = React.useState(false);
-	const [divColor2, setDivColor2] = React.useState(false);
+	const [divColor, setDivColor] = React.useState(1);
 	const addCoverage = useAddCoverage();
 
 	const propsRobbery = {
 		title: "Llanta robada",
 		image: robo,
-		handleFunction: handleClickRobbery,
-		labelbutton: buttonRobbery,
+		quantity: 15,
+		setCoverageAmount: setCoverageAmount,
+		coverageAmount: coverageAmount,
 	};
 	const propsCrush = {
 		title: "Choque y/o pasarte la luz roja",
 		image: choque,
-		handleFunction: handleClickCrush,
-		labelbutton: buttonCrush,
+		quantity: 20,
+		setCoverageAmount: setCoverageAmount,
+		coverageAmount: coverageAmount,
 	};
 	const propsAccident = {
 		title: "Atropello en la vía Evitamiento",
 		image: perdida,
-		handleFunction: handleClickAccident,
-		labelbutton: buttonAccident,
+		quantity: 50,
+		setCoverageAmount: setCoverageAmount,
+		coverageAmount: coverageAmount,
 	};
 
-	function handleClickRobbery() {
-		if (buttonRobbery === "agregar") {
-			setCoverageAmount(coverageAmount + 15);
-			setButtonRobbery("quitar");
-		} else {
-			setCoverageAmount(coverageAmount - 15);
-			setButtonRobbery("agregar");
-		}
-	}
-	function handleClickCrush() {
-		if (buttonCrush === "agregar") {
-			setCoverageAmount(coverageAmount + 20);
-			setButtonCrush("quitar");
-		} else {
-			setCoverageAmount(coverageAmount - 20);
-			setButtonCrush("agregar");
-		}
-	}
-	function handleClickAccident() {
-		if (buttonAccident === "agregar") {
-			setCoverageAmount(coverageAmount + 50);
-			setButtonAccident("quitar");
-		} else {
-			setCoverageAmount(coverageAmount - 50);
-			setButtonAccident("agregar");
-		}
+	function changeColor(index) {
+		setDivColor(index);
 	}
 
-	function changeColor() {
-		if (!divColor) {
-			setDivColor(true);
-			setDivColor1(false);
-			setDivColor2(false);
-		}
-	}
-
-	function changeColor1() {
-		if (!divColor1) {
-			setDivColor1(true);
-			setDivColor(false);
-			setDivColor2(false);
-		}
-	}
-	function changeColor2() {
-		if (!divColor2) {
-			setDivColor2(true);
-			setDivColor(false);
-			setDivColor1(false);
-		}
-	}
 	function gotoSuccess() {
 		addCoverage(coverageAmount);
 		navigate("/success");
@@ -140,33 +92,25 @@ const Plan = () => {
 				</div>
 				<div className="plan__options">
 					<div
-						className={
-							divColor ? "plan__options--selected" : "plan__options--item"
-						}
-						onClick={changeColor}
+						className={divColor === 1 ? "plan__item--selected" : "plan__item"}
+						onClick={() => changeColor(1)}
 					>
 						protege a tu auto
 					</div>
-
 					<div
-						className={
-							divColor1 ? "plan__options--selected" : "plan__options--item"
-						}
-						onClick={changeColor1}
+						className={divColor === 2 ? "plan__item--selected" : "plan__item"}
+						onClick={() => changeColor(2)}
 					>
 						protege a los que te rodean
 					</div>
-
 					<div
-						className={
-							divColor2 ? "plan__options--selected" : "plan__options--item"
-						}
-						onClick={changeColor2}
+						className={divColor === 3 ? "plan__item--selected" : "plan__item"}
+						onClick={() => changeColor(3)}
 					>
 						mejora tu plan
 					</div>
-					{/* <hr /> */}
 				</div>
+				{/* <hr /> */}
 				<div className="coverages">
 					<Coverage {...propsRobbery} />
 					<Coverage {...propsCrush} />

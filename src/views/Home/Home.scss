@@ -9,7 +9,8 @@
 .home__image {
 	background-image: url(../../images/home.png);
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: cover;
+	background-position: center;
 	grid-column: 1/ 5;
 	grid-row: 1/12;
 }

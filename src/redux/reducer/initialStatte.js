@@ -8,7 +8,6 @@ const initialState = {
 	gas: false,
 	amount: 0,
 	coverage: 0,
-	// coverage: 0,
 };
 
 export default initialState;
